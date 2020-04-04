@@ -4,7 +4,7 @@
 ;; (toggle-frame-fullscreen)
 (display-time-mode 1)
 
-;; Sources de packages
+;; Package repositories
 (require 'package)
 (add-to-list 'package-archives
              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
@@ -12,6 +12,7 @@
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)			
 
+;; Required packages
 (setq package-list '(auctex cuda-mode ein deferred auto-complete eshell-git-prompt exwm flycheck flymake-python-pyflakes flymake-easy haskell-mode magic-latex-buffer magit git-commit ghub graphql magit-popup dash markdown-mode memoize minimap multiple-cursors php-mode pkg-info epl polymode popup px py-autopep8 request s skewer-mode js2-mode simple-httpd treepy web-mode web-server websocket with-editor async xelb yaml-mode zenburn-theme))
 
 (unless package-archive-contents
@@ -21,13 +22,13 @@
   (unless (package-installed-p package)
     (package-install package)))
 
-;; Raccourcis clavier
+;; Keybindings
 (global-set-key (kbd "C-x j") 'goto-line)
-;;; EIN
 ;;; EXWM
 ;; (require 'exwm)
 ;;(require 'exwm-config)
 ;;(exwm-config-default)
+;;; Ido
 (ido-mode 1)
 ;;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
@@ -38,7 +39,7 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c b") 'org-switchb)
-;; Compatibilité Windmove et Org-Mode
+;; Windmove | Org-Mode compatibility
 (add-hook 'org-shiftup-final-hook 'windmove-up)
 (add-hook 'org-shiftleft-final-hook 'windmove-left)
 (add-hook 'org-shiftdown-final-hook 'windmove-down)
@@ -47,7 +48,6 @@
 ;; Compilation
 (global-set-key (kbd "C-c e") 'compile)
 
-;; Autres
 (require 'windmove)
 (windmove-default-keybindings)
 (custom-set-variables
