@@ -41,6 +41,8 @@
 (setq inhibit-startup-screen t)
 (setq org-startup-truncated nil)
 (setq make-backup-files nil)
+(setq auto-save-default nil)
+(setq create-lockfiles nil)
 (setq ibuffer-saved-filter-groups
       (quote (("default"
 	       ("emacs" (or
@@ -59,12 +61,13 @@
 	       ))))
 (setq-default c-basic-offset 4)
 
+
 ;; Package repositories
 (require 'package)
 (add-to-list 'package-archives
              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+;; (add-to-list 'package-archives
+;;              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)			
 
 ;; Packages requirements
@@ -119,13 +122,11 @@
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
- '(custom-enabled-themes (quote (zenburn)))
+ '(custom-enabled-themes '(zenburn))
  '(custom-safe-themes
-   (quote
-    ("84890723510d225c45aaff941a7e201606a48b973f0121cb9bcb0b9399be8cba" default)))
+   '("84890723510d225c45aaff941a7e201606a48b973f0121cb9bcb0b9399be8cba" default))
  '(package-selected-packages
-   (quote
-    (gnuplot auctex px exwm minimap magic-latex-buffer ein cuda-mode yaml-mode haskell-mode markdown-mode multiple-cursors magit eshell-git-prompt org neotree))))
+   '(dockerfile-mode gnuplot auctex px exwm minimap magic-latex-buffer ein cuda-mode yaml-mode haskell-mode markdown-mode multiple-cursors magit eshell-git-prompt org neotree)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
